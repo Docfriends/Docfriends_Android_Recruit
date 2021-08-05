@@ -53,7 +53,6 @@ interface DocFriendsAPI {
                     .create()
                 _docfriendService = Retrofit.Builder()
                     .client(okHttpClient)
-                    // .addConverterFactory(ScalarsConverterFactory.create())
                     .addConverterFactory(GsonConverterFactory.create(gson))
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .baseUrl(TARGET_ADDRESS)

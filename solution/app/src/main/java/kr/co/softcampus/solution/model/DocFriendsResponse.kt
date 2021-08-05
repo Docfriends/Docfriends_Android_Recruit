@@ -1,6 +1,7 @@
 package kr.co.softcampus.solution.model
 
 
+import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 data class DocFriendsResponse(
@@ -29,6 +30,7 @@ data class DocFriendsResponse(
     )
 
     data class Consult(
+        var type : Int = IMAGE_TYPE,
         @SerializedName("seq")
         val seq: Int,
         @SerializedName("title")
@@ -51,6 +53,7 @@ data class DocFriendsResponse(
     }
 
     data class Expert(
+        var type : Int = IMAGE_TYPE2,
         @SerializedName("name")
         val name: String,
         @SerializedName("typeName")
@@ -71,6 +74,7 @@ data class DocFriendsResponse(
     }
 
     data class Company(
+        var type : Int = IMAGE_TYPE3,
         @SerializedName("companyName")
         val companyName: String,
         @SerializedName("address")
@@ -80,4 +84,9 @@ data class DocFriendsResponse(
         @SerializedName("introPath")
         val introPath: String
     )
+    companion object {
+        const val IMAGE_TYPE = 0
+        const val IMAGE_TYPE2 = 1
+        const val IMAGE_TYPE3 = 2
+    }
 }

@@ -7,6 +7,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import kr.co.softcampus.solution.databinding.ItemRecyclerviewQnaBinding
 import kr.co.softcampus.solution.model.DocFriendsResponse
+import java.text.SimpleDateFormat
+import java.util.*
 
 /**
  * @author Gnoss
@@ -15,23 +17,16 @@ import kr.co.softcampus.solution.model.DocFriendsResponse
  * @desc
  */
 class QnaAdatper(
-    private val list: List<DocFriendsResponse.Consult>
+    private val list: List<DocFriendsResponse.Consult>,
+    var text:String = ""
 ) :    RecyclerView.Adapter<QnaAdatper.ViewHolderClass>(){
 
-    var text : String = ""
     inner class ViewHolderClass(private val binding : ItemRecyclerviewQnaBinding): RecyclerView.ViewHolder(binding.root){
         val title : TextView = binding.tvQnaTitle
         val context : TextView = binding.tvQnaContent
         val answercnt : TextView = binding.tvQnaAnswer
         val date : TextView = binding.tvQnaDate
-        val hashtag : TextView = binding.rvQnaHashtag
-//        fun setView(item : TEST.Consult) {
-//            with(binding) {
-//                consult = item
-//                holderView = this@ViewHolderClass
-//                executePendingBindings()
-//            }
-//        }
+        val hashtag : TextView = binding.tvQnaHashtag
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderClass {
         val binding = ItemRecyclerviewQnaBinding.inflate(LayoutInflater.from(parent.context),parent,false)
@@ -40,33 +35,40 @@ class QnaAdatper(
 
     override fun onBindViewHolder(holder: ViewHolderClass, position: Int) {
 
-//        with(holder) {
-//            setView(list[position])
-//        }
-//    }
-//        val consultItem = list[position].consultList[position]
         with(holder) {
             title.text = list[position].title
             context.text = list[position].context
             answercnt.text= "답변" + list[position].answerCnt.toString()
-            date.text = list[position].regDate.toString()
+            date.text = convertLongToTime(list[position].regDate)
             Log.d("RESPONSE9","${list[position]}")
             Log.d("RESPONSE11","${list}")
             Log.d("RESPONSE","${list.size}")
-            if (list[position].tagList.size!=0) {
-                for (i in 0..list[position].tagList.size-1) {
-                    text += "{${list[position].tagList[i].name}"
-                    if ( i == list[position].tagList.size){
-                        hashtag.text = text
-                    }
-                    else{
-                        hashtag.text = ""
-                    }
+
+
+            //make hashtag and bind with textview
+            if (list[position].tagList.isNotEmpty()) {
+                text = ""
+                for (i in list[position].tagList.indices) {
+                    text += "#"+"${list[position].tagList[i].name} "
+                    Log.d("RESPONSE12","${text}")
                 }
+                hashtag.text = text
             }
         }
     }
     override fun getItemCount(): Int {
         return list.size
+    }
+
+    override fun getItemViewType(position: Int): Int {
+        return super.getItemViewType(position)
+        Log.d("RESPONSE22","${list.get(position)}")
+    }
+
+    // Long from Json transform to Date
+    fun convertLongToTime (time: Long): String {
+        val date = Date(time)
+        val format = SimpleDateFormat("yyyy.MM.dd")
+        return format.format(date)
     }
 }
