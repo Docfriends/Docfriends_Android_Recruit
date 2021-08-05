@@ -40,14 +40,7 @@ class MainActivity : AppCompatActivity() {
                 listthree.forEach {
                     it.type = DocFriendsResponse.IMAGE_TYPE3
                 }
-
                 // 요청성공 = onResponse
-                Log.d("TESTING","${it}")
-                Log.d("TESTING2","${listone}")
-                Log.d("TESTING3","${listtwo}")
-                Log.e("{TEST}", "${listthree[0].type}")
-                Log.d("TESTING4","${listthree}")
-
             }, {
                 // 요청실패 = onFailure
             })

@@ -40,17 +40,12 @@ class QnaAdatper(
             context.text = list[position].context
             answercnt.text= "답변" + list[position].answerCnt.toString()
             date.text = convertLongToTime(list[position].regDate)
-            Log.d("RESPONSE9","${list[position]}")
-            Log.d("RESPONSE11","${list}")
-            Log.d("RESPONSE","${list.size}")
-
 
             //make hashtag and bind with textview
             if (list[position].tagList.isNotEmpty()) {
                 text = ""
                 for (i in list[position].tagList.indices) {
                     text += "#"+"${list[position].tagList[i].name} "
-                    Log.d("RESPONSE12","${text}")
                 }
                 hashtag.text = text
             }
@@ -62,7 +57,6 @@ class QnaAdatper(
 
     override fun getItemViewType(position: Int): Int {
         return super.getItemViewType(position)
-        Log.d("RESPONSE22","${list.get(position)}")
     }
 
     // Long from Json transform to Date
