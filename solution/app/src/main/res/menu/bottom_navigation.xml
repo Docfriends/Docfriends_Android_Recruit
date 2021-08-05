@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <item android:id="@+id/home"
+        android:title="홈"
+        android:icon="@drawable/ic_home"
+        />
+
+
+    <item android:id="@+id/care"
+        android:title="전문가"
+        android:icon="@drawable/ic_care"
+        />
+
+
+    <item android:id="@+id/chat"
+        android:title="상담방"
+        android:icon="@drawable/ic_chat"
+        />
+
+    <item android:id="@+id/videocall"
+        android:title="비대면진료"
+        android:icon="@drawable/ic_videocall"
+        />
+
+    <item android:id="@+id/me"
+        android:title="프로필"
+        android:icon="@drawable/ic_me"
+        />
+</menu>
