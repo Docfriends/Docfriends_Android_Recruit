@@ -15,5 +15,7 @@
     <color name="divide">#F5F5F5</color>
     <color name="qnadate">#afc4ce</color>
     <color name="nearhospital">#7f949d</color>
+    <color name="hashtag">#b9cbdd</color>
+    <color name="btn_profile">#423e42</color>
 
 </resources>
