@@ -26,17 +26,20 @@ class MainActivity : AppCompatActivity() {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({ it ->
-                var listone = it.companyList
-                var listtwo = it.consultList
-                var listthree = it.expertList
-                binding.recyclerview.adapter = QnaAdatper(it.consultList)
+                val list = listOf<DocFriendsResponse>(it)
+                var listone = it.consultList
+                var listtwo = it.expertList
+                var listthree = it.companyList
+                binding.recyclerview.adapter = QnaAdatper(list,listone,listtwo,listthree)
 
+                Log.d("TAGGG", "onCreate: ${list}")
+                listone.forEach {
+                    it.type = DocFriendsResponse.IMAGE_TYPE
+                }
                 listtwo.forEach {
                     it.type = DocFriendsResponse.IMAGE_TYPE2
                 }
-                listthree.forEach {
-                    it.type = DocFriendsResponse.IMAGE_TYPE3
-                }
+
                 // 요청성공 = onResponse
             }, {
                 // 요청실패 = onFailure

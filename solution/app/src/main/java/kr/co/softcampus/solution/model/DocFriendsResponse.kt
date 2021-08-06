@@ -52,7 +52,7 @@ data class DocFriendsResponse(
         )
     }
 
-    class Expert(
+    data class Expert(
         var type : Int = IMAGE_TYPE2,
         @SerializedName("name")
         val name: String,
@@ -84,7 +84,7 @@ data class DocFriendsResponse(
         val introPath: String
     ){
         val type : Int
-        get() = 2
+        get() = IMAGE_TYPE3
     }
     companion object {
         const val IMAGE_TYPE = 0
