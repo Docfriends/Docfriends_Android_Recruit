@@ -31,9 +31,6 @@ class MainActivity : AppCompatActivity() {
                 var listthree = it.expertList
                 binding.recyclerview.adapter = QnaAdatper(it.consultList)
 
-                listone.forEach {
-                    it.type = DocFriendsResponse.IMAGE_TYPE
-                }
                 listtwo.forEach {
                     it.type = DocFriendsResponse.IMAGE_TYPE2
                 }
