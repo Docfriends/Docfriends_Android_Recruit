@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
+
         binding.recyclerview.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL,false)
 
         DocFriendsAPI.invoke(this).getInfo()

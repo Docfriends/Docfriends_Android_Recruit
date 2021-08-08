@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kr.co.softcampus.solution.R
 import kr.co.softcampus.solution.databinding.*
@@ -33,7 +34,7 @@ class QnaAdatper(
     var text:String = ""
 ) :    RecyclerView.Adapter<RecyclerView.ViewHolder>(){
 
-    inner class ViewHolderClass(itemView : View): RecyclerView.ViewHolder(itemView){
+    inner class ConsultViewHolder(itemView : View): RecyclerView.ViewHolder(itemView){
         val title : TextView = itemView.findViewById(R.id.tv_qna_title)
         val context : TextView = itemView.findViewById(R.id.tv_qna_content)
         val answercnt : TextView = itemView.findViewById(R.id.tv_qna_answer)
@@ -41,11 +42,11 @@ class QnaAdatper(
         val hashtag : TextView = itemView.findViewById(R.id.tv_qna_hashtag)
     }
 
-    inner class ViewHolderClass2(itemView : View) : RecyclerView.ViewHolder(itemView) {
+    inner class ExpertViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
         val rvdoctor : RecyclerView = itemView.findViewById(R.id.rv_doctor)
     }
 
-    inner class ViewHolderClass3(itemView : View) : RecyclerView.ViewHolder(itemView) {
+    inner class HospitalViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
         val rvhospital : RecyclerView = itemView.findViewById(R.id.rv_hospital)
 
     }
@@ -55,19 +56,19 @@ class QnaAdatper(
 
         if (viewType == IMAGE_TYPE3) {
             view = LayoutInflater.from(parent.context).inflate(R.layout.item_recyclerview_hospital, parent, false)
-            return ViewHolderClass3(view)
+            return HospitalViewHolder(view)
         } else if (viewType == IMAGE_TYPE2){
             view = LayoutInflater.from(parent.context).inflate(R.layout.item_recyclerview_doctor, parent, false)
-            return ViewHolderClass2(view)
+            return ExpertViewHolder(view)
         }
         else{
             view = LayoutInflater.from(parent.context).inflate(R.layout.item_recyclerview_qna, parent, false);
-            return ViewHolderClass(view)
+            return ConsultViewHolder(view)
         }
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        with(holder as ViewHolderClass) {
+        with(holder as ConsultViewHolder) {
             title.text = listconsult[position].title
             context.text = listconsult[position].context
             answercnt.text = "답변" + listconsult[position].answerCnt.toString()
@@ -82,21 +83,21 @@ class QnaAdatper(
             }
         }
 
-//        if(position == 3 ){
-//
-//            Log.d("TESTTTTTTT1","TTTT")
-//            val holder2 = holder as ViewHolderClass2
-//
-//            Log.d("TESTTTTTTT1","TTTT")
-//            holder2.rvdoctor.adapter = DoctorAdapter(owner,listexpert)
-//            holder2.rvdoctor.layoutManager = LinearLayoutManager(owner,LinearLayoutManager.HORIZONTAL,false)
-//        }
-//
-//        if(position == 4){
-//            val holder3 = holder as ViewHolderClass3
-//            holder3.rvhospital.adapter = HospitalAdapter(owner,listcompany)
-//            holder3.rvhospital.layoutManager = LinearLayoutManager(owner,LinearLayoutManager.HORIZONTAL,false)
-//            }
+        if(position == 3 ){
+
+            Log.d("TESTTTTTTT1","TTTT")
+            val expertviewholder = holder as ExpertViewHolder
+
+            Log.d("TESTTTTTTT1","TTTT")
+            expertviewholder.rvdoctor.adapter = DoctorAdapter(owner,listexpert)
+            expertviewholder.rvdoctor.layoutManager = LinearLayoutManager(owner,LinearLayoutManager.HORIZONTAL,false)
+        }
+
+        if(position == 4){
+            val hospitalviewholder = holder as HospitalViewHolder
+            hospitalviewholder.rvhospital.adapter = HospitalAdapter(owner,listcompany)
+            hospitalviewholder.rvhospital.layoutManager = LinearLayoutManager(owner,LinearLayoutManager.HORIZONTAL,false)
+            }
     }
 
     override fun getItemCount(): Int {
@@ -122,6 +123,4 @@ class QnaAdatper(
         val format = SimpleDateFormat("yyyy.MM.dd")
         return format.format(date)
     }
-
-
 }
