@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
                 var listone = it.consultList
                 var listtwo = it.expertList
                 var listthree = it.companyList
-                binding.recyclerview.adapter = QnaAdatper(list,listone,listtwo,listthree)
+                binding.recyclerview.adapter = QnaAdatper(this,list,listone,listtwo,listthree)
 
                 Log.d("TAGGG", "onCreate: ${list}")
                 listone.forEach {

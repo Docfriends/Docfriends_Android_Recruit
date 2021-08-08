@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import kr.co.softcampus.solution.R
 import kr.co.softcampus.solution.databinding.*
@@ -24,113 +25,92 @@ import java.util.*
  * @desc
  */
 class QnaAdatper(
+    private val owner : AppCompatActivity,
     private val list: List<DocFriendsResponse>,
     private val listconsult : List<DocFriendsResponse.Consult>,
     private val listexpert : List<DocFriendsResponse.Expert>,
     private val listcompany : List<DocFriendsResponse.Company>,
     var text:String = ""
-) :    RecyclerView.Adapter<QnaAdatper.ViewHolderClass>(){
+) :    RecyclerView.Adapter<RecyclerView.ViewHolder>(){
 
-    inner class ViewHolderClass(private val binding : ItemRecyclerviewQnaBinding): RecyclerView.ViewHolder(binding.root){
-        val title : TextView = binding.tvQnaTitle
-        val context : TextView = binding.tvQnaContent
-        val answercnt : TextView = binding.tvQnaAnswer
-        val date : TextView = binding.tvQnaDate
-        val hashtag : TextView = binding.tvQnaHashtag
+    inner class ViewHolderClass(itemView : View): RecyclerView.ViewHolder(itemView){
+        val title : TextView = itemView.findViewById(R.id.tv_qna_title)
+        val context : TextView = itemView.findViewById(R.id.tv_qna_content)
+        val answercnt : TextView = itemView.findViewById(R.id.tv_qna_answer)
+        val date : TextView = itemView.findViewById(R.id.tv_qna_date)
+        val hashtag : TextView = itemView.findViewById(R.id.tv_qna_hashtag)
     }
 
-    inner class ViewHolderClass2(private val binding : ItemRecyclerviewDoctordetailBinding) : RecyclerView.ViewHolder(binding.root) {
-        val ivdoctor: ImageView = itemView.findViewById(R.id.iv_doctor)
-        val tvdoctorname : TextView = itemView.findViewById(R.id.tv_doctor_name)
-        val tvdoctorkind : TextView = itemView.findViewById(R.id.tv_doctor_kind)
-        var tvdoctorhospital : RatingBar = itemView.findViewById(R.id.tv_doctor_hospital)
+    inner class ViewHolderClass2(itemView : View) : RecyclerView.ViewHolder(itemView) {
+        val rvdoctor : RecyclerView = itemView.findViewById(R.id.rv_doctor)
     }
 
-    inner class ViewHolderClass3(private val binding : ItemRecyclerviewHospitaldetailBinding) : RecyclerView.ViewHolder(binding.root) {
-        val ivhospital: TextView = itemView.findViewById(R.id.iv_hospital)
-        val tvhospitalname : TextView = itemView.findViewById(R.id.tv_hospitalname)
-        var tvhospitallocation : RatingBar = itemView.findViewById(R.id.tv_hospitallocation)
-    }
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderClass {
-        val binding = ItemRecyclerviewQnaBinding.inflate(LayoutInflater.from(parent.context),parent,false)
-        return ViewHolderClass(binding)
+    inner class ViewHolderClass3(itemView : View) : RecyclerView.ViewHolder(itemView) {
+        val rvhospital : RecyclerView = itemView.findViewById(R.id.rv_hospital)
+
     }
 
-    override fun onBindViewHolder(holder: ViewHolderClass, position: Int) {
-        val obj = list[position]
-        if(obj.consultList[position].type == IMAGE_TYPE){
-            (holder as ViewHolderClass).title.text = listconsult[position].title
-            holder.context.text = listconsult[position].context
-            holder.answercnt.text = "답변" + listconsult[position].answerCnt.toString()
-            holder.date.text = convertLongToTime(listconsult[position].regDate)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        val view : View
+
+        if (viewType == IMAGE_TYPE3) {
+            view = LayoutInflater.from(parent.context).inflate(R.layout.item_recyclerview_hospital, parent, false)
+            return ViewHolderClass3(view)
+        } else if (viewType == IMAGE_TYPE2){
+            view = LayoutInflater.from(parent.context).inflate(R.layout.item_recyclerview_doctor, parent, false)
+            return ViewHolderClass2(view)
+        }
+        else{
+            view = LayoutInflater.from(parent.context).inflate(R.layout.item_recyclerview_qna, parent, false);
+            return ViewHolderClass(view)
+        }
+    }
+
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        with(holder as ViewHolderClass) {
+            title.text = listconsult[position].title
+            context.text = listconsult[position].context
+            answercnt.text = "답변" + listconsult[position].answerCnt.toString()
+            date.text = convertLongToTime(listconsult[position].regDate)
+
             if (listconsult[position].tagList.isNotEmpty()) {
                 text = ""
                 for (i in listconsult[position].tagList.indices) {
-                    text += "#"+"${listconsult[position].tagList[i].name} "
+                    text += "#" + "${listconsult[position].tagList[i].name} "
                 }
-                holder.hashtag.text = text
-            }
-        }
-        if(obj.expertList[position].type == IMAGE_TYPE2){
-            (holder as ViewHolderClass2).tvdoctorhashtag.text = listexpert[position].companyName
-            holder.tvdoctorkind.text = "("+listexpert[position].typeName+")"
-            holder.answercnt.text = "답변" + listconsult[position].answerCnt.toString()
-            holder.date.text = convertLongToTime(listconsult[position].regDate)
-            if (listconsult[position].tagList.isNotEmpty()) {
-                text = ""
-                for (i in listconsult[position].tagList.indices) {
-                    text += "#"+"${listconsult[position].tagList[i].name} "
-                }
-                holder.hashtag.text = text
-            }
-        }
-        if(obj.companyList[position].type == IMAGE_TYPE3){
-            (holder as ViewHolderClass3).title.text = listconsult[position].title
-            holder.context.text = listconsult[position].context
-            holder.answercnt.text = "답변" + listconsult[position].answerCnt.toString()
-            holder.date.text = convertLongToTime(listconsult[position].regDate)
-            if (listconsult[position].tagList.isNotEmpty()) {
-                text = ""
-                for (i in listconsult[position].tagList.indices) {
-                    text += "#"+"${listconsult[position].tagList[i].name} "
-                }
-                holder.hashtag.text = text
+                hashtag.text = text
             }
         }
 
-//        Log.d("TEST", "onCreate: ${list}")
-//        with(holder) {
-//            title.text = listconsult[position].title
-//            context.text = listconsult[position].context
-//            answercnt.text= "답변" + listconsult[position].answerCnt.toString()
-//            date.text = convertLongToTime(listconsult[position].regDate)
+//        if(position == 3 ){
 //
-//            //make hashtag and bind with textview
-//            if (listconsult[position].tagList.isNotEmpty()) {
-//                text = ""
-//                for (i in listconsult[position].tagList.indices) {
-//                    text += "#"+"${listconsult[position].tagList[i].name} "
-//                }
-//                hashtag.text = text
-//            }
+//            Log.d("TESTTTTTTT1","TTTT")
+//            val holder2 = holder as ViewHolderClass2
+//
+//            Log.d("TESTTTTTTT1","TTTT")
+//            holder2.rvdoctor.adapter = DoctorAdapter(owner,listexpert)
+//            holder2.rvdoctor.layoutManager = LinearLayoutManager(owner,LinearLayoutManager.HORIZONTAL,false)
 //        }
+//
+//        if(position == 4){
+//            val holder3 = holder as ViewHolderClass3
+//            holder3.rvhospital.adapter = HospitalAdapter(owner,listcompany)
+//            holder3.rvhospital.layoutManager = LinearLayoutManager(owner,LinearLayoutManager.HORIZONTAL,false)
+//            }
     }
+
     override fun getItemCount(): Int {
         return listconsult.size
     }
+
     override fun getItemViewType(position: Int): Int {
         if (listconsult[position].type == IMAGE_TYPE){
-            Log.d("TEST2","${listconsult[position].type}")
-            Log.d("TEST2","${listconsult[position].type}")
             return IMAGE_TYPE
         }
         if(listexpert[position].type == IMAGE_TYPE2){
-            Log.d("TEST2","${listexpert[position].type}")
             return IMAGE_TYPE2
         }
-
         if (listcompany[position].type == IMAGE_TYPE3){
-            Log.d("TEST2","${listcompany[position].type}")
             return IMAGE_TYPE3
         }
         return Log.d("TEST","ERROR")
@@ -142,4 +122,6 @@ class QnaAdatper(
         val format = SimpleDateFormat("yyyy.MM.dd")
         return format.format(date)
     }
+
+
 }
