@@ -84,11 +84,7 @@ class QnaAdatper(
         }
 
         if(position == 3 ){
-
-            Log.d("TESTTTTTTT1","TTTT")
             val expertviewholder = holder as ExpertViewHolder
-
-            Log.d("TESTTTTTTT1","TTTT")
             expertviewholder.rvdoctor.adapter = DoctorAdapter(owner,listexpert)
             expertviewholder.rvdoctor.layoutManager = LinearLayoutManager(owner,LinearLayoutManager.HORIZONTAL,false)
         }
