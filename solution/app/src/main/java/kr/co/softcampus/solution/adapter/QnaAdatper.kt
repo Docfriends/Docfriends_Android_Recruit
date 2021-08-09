@@ -83,17 +83,17 @@ class QnaAdatper(
             }
         }
 
-        if(position == 3 ){
-            val expertviewholder = holder as ExpertViewHolder
-            expertviewholder.rvdoctor.adapter = DoctorAdapter(owner,listexpert)
-            expertviewholder.rvdoctor.layoutManager = LinearLayoutManager(owner,LinearLayoutManager.HORIZONTAL,false)
-        }
-
-        if(position == 4){
-            val hospitalviewholder = holder as HospitalViewHolder
-            hospitalviewholder.rvhospital.adapter = HospitalAdapter(owner,listcompany)
-            hospitalviewholder.rvhospital.layoutManager = LinearLayoutManager(owner,LinearLayoutManager.HORIZONTAL,false)
-            }
+//        if(position == 3 ){
+//            val expertviewholder = holder as ExpertViewHolder
+//            expertviewholder.rvdoctor.adapter = DoctorAdapter(owner,listexpert)
+//            expertviewholder.rvdoctor.layoutManager = LinearLayoutManager(owner,LinearLayoutManager.HORIZONTAL,false)
+//        }
+//
+//        if(position == 4){
+//            val hospitalviewholder = holder as HospitalViewHolder
+//            hospitalviewholder.rvhospital.adapter = HospitalAdapter(owner,listcompany)
+//            hospitalviewholder.rvhospital.layoutManager = LinearLayoutManager(owner,LinearLayoutManager.HORIZONTAL,false)
+//            }
     }
 
     override fun getItemCount(): Int {
