@@ -44,7 +44,7 @@ class HospitalAdapter (
                 Glide.with(owner).load(listcompany[position].introPath).into(ivhospital)
             }
             else {
-                Log.d("TEST", "TEST")
+                Log.d("TEST", "ERROR")
             }
             //make hashtag and bind with textview
         }

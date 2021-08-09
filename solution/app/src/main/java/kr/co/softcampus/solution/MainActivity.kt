@@ -32,8 +32,6 @@ class MainActivity : AppCompatActivity() {
                 var listexpert = it.expertList
                 var listcompany = it.companyList
                 binding.recyclerview.adapter = QnaAdatper(this,list,listconsult,listexpert,listcompany)
-
-                Log.d("TAGGG", "onCreate: ${list}")
                 listconsult.forEach {
                     it.type = DocFriendsResponse.IMAGE_TYPE
                 }

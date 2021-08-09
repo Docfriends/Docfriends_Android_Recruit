@@ -44,7 +44,7 @@ class DoctorAdapter (
             if (listexpert[position].profileImagePath != null) {
                 Glide.with(owner).load(listexpert[position].profileImagePath).into(ivdoctor)
             } else {
-                Log.d("TEST", "TEST")
+                Log.d("TEST", "ERROR")
             }
             //make hashtag and bind with textview
             if (listexpert[position].tagList.isNotEmpty()) {

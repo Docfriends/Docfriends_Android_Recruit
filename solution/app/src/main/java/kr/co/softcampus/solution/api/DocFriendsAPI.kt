@@ -40,7 +40,6 @@ interface DocFriendsAPI {
                         .newBuilder()
                         .url(url)
                         .build()
-                    Log.e("[TEST]", "$url")
                     return@Interceptor chain.proceed(request)
                 }
                 val okHttpClient = OkHttpClient.Builder()
