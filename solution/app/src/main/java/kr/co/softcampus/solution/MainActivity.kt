@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.recyclerview.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL,false)
 
-        DocFriendsAPI.invoke(this).getInfo()
+        DocFriendsAPI(this).getInfo()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({ it ->

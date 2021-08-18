@@ -104,13 +104,12 @@ class QnaAdatper(
         if (listconsult[position].type == IMAGE_TYPE){
             return IMAGE_TYPE
         }
-        if(listexpert[position].type == IMAGE_TYPE2){
+        else if(listexpert[position].type == IMAGE_TYPE2){
             return IMAGE_TYPE2
         }
-        if (listcompany[position].type == IMAGE_TYPE3){
+        else{
             return IMAGE_TYPE3
         }
-        return Log.d("TEST","ERROR")
     }
 
     // Long from Json transform to Date
