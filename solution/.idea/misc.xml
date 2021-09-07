@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Github.com/Docfriends_Android_Recruit/solution/app/src/main/res/drawable/ic_edit.xml" value="0.38229166666666664" />
+        <entry key="..\:/Github.com/Docfriends_Android_Recruit/solution/app/src/main/res/drawable/ic_me.xml" value="0.2609375" />
+        <entry key="..\:/Github.com/Docfriends_Android_Recruit/solution/app/src/main/res/layout/activity_main.xml" value="0.2109375" />
+        <entry key="..\:/Github.com/Docfriends_Android_Recruit/solution/app/src/main/res/layout/item_recyclerview_doctor.xml" value="0.16770833333333332" />
+        <entry key="..\:/Github.com/Docfriends_Android_Recruit/solution/app/src/main/res/layout/item_recyclerview_doctordetail.xml" value="0.25" />
+        <entry key="..\:/Github.com/Docfriends_Android_Recruit/solution/app/src/main/res/layout/item_recyclerview_hospital.xml" value="0.24479166666666666" />
+        <entry key="..\:/Github.com/Docfriends_Android_Recruit/solution/app/src/main/res/layout/item_recyclerview_hospitaldetail.xml" value="0.24479166666666666" />
+        <entry key="..\:/Github.com/Docfriends_Android_Recruit/solution/app/src/main/res/layout/item_recyclerview_qna.xml" value="0.24479166666666666" />
+        <entry key="..\:/Users/user15/gnoss/Docfriends_Android_Recruit/solution/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/user15/gnoss/Docfriends_Android_Recruit/solution/app/src/main/res/menu/bottom_navigation.xml" value="0.2869791666666667" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

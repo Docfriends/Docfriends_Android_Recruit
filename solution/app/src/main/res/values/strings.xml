@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">solution</string>
+
+
+    <string name="nickname">박준걸1</string>
+    <string name="nicknamebackward">님이 궁금한 증상을 알려주세요</string>
+    <string name="home">홈</string>
+    <string name="expert">전문가</string>
+    <string name="talk">상담방</string>
+    <string name="consult">비대면진료</string>
+    <string name="profile">프로필</string>
+</resources>
