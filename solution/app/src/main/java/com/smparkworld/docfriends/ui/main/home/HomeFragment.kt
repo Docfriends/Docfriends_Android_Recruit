@@ -5,10 +5,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import com.smparkworld.docfriends.databinding.FragmentMainHomeBinding
 import com.smparkworld.docfriends.ui.main.MainActivity
+import javax.inject.Inject
 
 class HomeFragment : Fragment() {
+
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
+
+    private val viewModel by viewModels<HomeViewModel> { viewModelFactory }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
