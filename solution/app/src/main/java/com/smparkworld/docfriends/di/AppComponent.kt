@@ -1,6 +1,7 @@
 package com.smparkworld.docfriends.di
 
 import android.content.Context
+import com.smparkworld.docfriends.ui.main.MainComponent
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
@@ -17,4 +18,6 @@ interface AppComponent {
     interface Factory {
         fun create(@BindsInstance applicationContext: Context): AppComponent
     }
+
+    fun mainComponent(): MainComponent.Factory
 }

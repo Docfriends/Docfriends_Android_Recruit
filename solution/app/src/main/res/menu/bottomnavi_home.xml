@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item_home"
+        android:icon="@drawable/ic_m_home_off"
+        android:title="@string/activityHome_bottomNaviItemHome"/>
+
+    <item
+        android:id="@+id/item_care"
+        android:icon="@drawable/ic_m_care_off"
+        android:title="@string/activityHome_bottomNaviItemCare"/>
+
+    <item
+        android:id="@+id/item_chat"
+        android:icon="@drawable/ic_m_chat_off"
+        android:title="@string/activityHome_bottomNaviItemChat"/>
+
+    <item
+        android:id="@+id/item_video"
+        android:icon="@drawable/ic_m_video_call_off"
+        android:title="@string/activityHome_bottomNaviItemVideo"/>
+
+    <item
+        android:id="@+id/item_me"
+        android:icon="@drawable/ic_m_me_off"
+        android:title="@string/activityHome_bottomNaviItemMe"/>
+</menu>
