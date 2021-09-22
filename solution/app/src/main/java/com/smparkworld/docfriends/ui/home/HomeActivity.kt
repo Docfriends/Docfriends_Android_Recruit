@@ -1,9 +1,10 @@
-package com.smparkworld.docfriends
+package com.smparkworld.docfriends.ui.home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.smparkworld.docfriends.R
 
-class MainActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
