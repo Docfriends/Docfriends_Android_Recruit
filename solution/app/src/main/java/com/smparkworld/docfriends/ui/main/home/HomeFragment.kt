@@ -6,11 +6,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.smparkworld.docfriends.databinding.FragmentMainHomeBinding
+import com.smparkworld.docfriends.ui.main.MainActivity
 
 class HomeFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
+        (requireActivity() as MainActivity).mainComponent.inject(this)
     }
 
     override fun onCreateView(
