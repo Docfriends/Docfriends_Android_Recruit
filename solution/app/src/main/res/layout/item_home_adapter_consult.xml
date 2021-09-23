@@ -3,10 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+        <import type="com.smparkworld.docfriends.model.HomeItem"/>
+        <import type="kotlin.Unit"/>
+        <variable
+            name="consult"
+            type="com.smparkworld.docfriends.model.Consult" />
+        <variable
+            name="onClick"
+            type="kotlin.jvm.functions.Function1&lt;HomeItem, Unit>"/>
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/itemMainAdapterConsult_padding">
+        android:padding="@dimen/itemHomeAdapterConsult_padding"
+        android:onClick="@{() -> onClick.invoke((HomeItem)consult)}">
 
         <TextView
             android:id="@+id/textView"
@@ -14,9 +26,9 @@
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:singleLine="true"
-            android:text=""
+            android:text="@{consult.title}"
             android:textColor="@color/fontMain"
-            android:textSize="@dimen/itemMainAdapterConsult_titleTextSize"
+            android:textSize="@dimen/itemHomeAdapterConsult_titleTextSize"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -27,10 +39,10 @@
             android:id="@+id/textView2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/itemMainAdapterConsult_tagMarginTop"
-            android:text=""
+            android:layout_marginTop="@dimen/itemHomeAdapterConsult_tagMarginTop"
+            android:text="@{consult.getTagsAsString()}"
             android:textColor="@color/fontSub"
-            android:textSize="@dimen/itemMainAdapterConsult_tagTextSize"
+            android:textSize="@dimen/itemHomeAdapterConsult_tagTextSize"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -41,10 +53,10 @@
             android:id="@+id/textView3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/itemMainAdapterConsult_contentMarginTop"
-            android:text=""
+            android:layout_marginTop="@dimen/itemHomeAdapterConsult_contentMarginTop"
+            android:text="@{consult.content}"
             android:textColor="@color/fontSub"
-            android:textSize="@dimen/itemMainAdapterConsult_contentTextSize"
+            android:textSize="@dimen/itemHomeAdapterConsult_contentTextSize"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2"
@@ -53,8 +65,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/itemMainAdapterConsult_answerMarginTop"
-            android:textSize="@dimen/itemMainAdapterConsult_answerTextSize"
+            android:layout_marginTop="@dimen/itemHomeAdapterConsult_answerMarginTop"
+            android:text="@{@string/itemMainAdapterConsult_answerForm(consult.answerCnt)}"
+            android:textSize="@dimen/itemHomeAdapterConsult_answerTextSize"
             android:textColor="@color/brand"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
@@ -64,9 +77,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/itemMainAdapterConsult_regDateMarginTop"
+            android:layout_marginTop="@dimen/itemHomeAdapterConsult_regDateMarginTop"
+            android:text="@{consult.getDateTime()}"
             android:textColor="@color/fontSub"
-            android:textSize="@dimen/itemMainAdapterConsult_answerTextSize"
+            android:textSize="@dimen/itemHomeAdapterConsult_answerTextSize"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3"
             tools:text="2021.05.28" />

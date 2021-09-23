@@ -7,4 +7,7 @@
     <string name="activityMain_bottomNaviItemChat">상담방</string>
     <string name="activityMain_bottomNaviItemVideo">비대면진료</string>
     <string name="activityMain_bottomNaviItemMe">프로필</string>
+
+    <!-- Item Main Adapter Consult -->
+    <string name="itemMainAdapterConsult_answerForm">답변 %d</string>
 </resources>

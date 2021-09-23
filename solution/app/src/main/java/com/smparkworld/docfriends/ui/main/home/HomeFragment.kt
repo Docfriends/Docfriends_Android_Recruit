@@ -5,10 +5,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.RecyclerView
+import com.smparkworld.docfriends.R
 import com.smparkworld.docfriends.databinding.FragmentMainHomeBinding
+import com.smparkworld.docfriends.model.*
 import com.smparkworld.docfriends.ui.main.MainActivity
 import javax.inject.Inject
 
@@ -19,6 +23,8 @@ class HomeFragment : Fragment() {
 
     private val viewModel by viewModels<HomeViewModel> { viewModelFactory }
 
+    lateinit var binding: FragmentMainHomeBinding
+
     override fun onAttach(context: Context) {
         super.onAttach(context)
         (requireActivity() as MainActivity).mainComponent.inject(this)
@@ -28,15 +34,45 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ) = FragmentMainHomeBinding.inflate(inflater, container, false).apply {
-        lifecycleOwner = viewLifecycleOwner
+    ) : View {
+        binding = FragmentMainHomeBinding.inflate(inflater, container, false)
+        binding.lifecycleOwner = viewLifecycleOwner
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) = with(binding) {
         onClickMenu = ::onClickMenu
-    }.root
+    }
 
     private fun onClickMenu(view: View) {
         when (view.id) {
-
+            R.id.btnMenuSearch -> {
+                Toast.makeText(requireContext(), "검색 버튼 클릭", Toast.LENGTH_SHORT).show()
+            }
+            R.id.btnMenuInvite -> {
+                Toast.makeText(requireContext(), "초대 버튼 클릭", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
+    private fun onClickItem(item: HomeItem) {
+        when (item) {
+            is HomeUiModel.Header -> {
+
+            }
+            is Consult -> {
+
+            }
+            is Expert -> {
+
+            }
+            is Company -> {
+
+            }
+        }
+    }
+
+    private fun initContainer(container: RecyclerView) {
+
+    }
 }

@@ -3,11 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <import type="com.smparkworld.docfriends.model.HomeItem"/>
+        <import type="kotlin.Unit"/>
+        <variable
+            name="header"
+            type="com.smparkworld.docfriends.model.HomeUiModel.Header" />
+        <variable
+            name="onClick"
+            type="kotlin.jvm.functions.Function1&lt;HomeItem, Unit>"/>
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/itemMainAdapterHeader_padding"
-        android:background="?attr/selectableItemBackground">
+        android:padding="@dimen/itemHomeAdapterHeader_padding"
+        android:background="?attr/selectableItemBackground"
+        android:onClick="@{() -> onClick.invoke(header)}">
 
         <ImageView
             android:id="@+id/imageView"
@@ -23,12 +35,13 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/itemMainAdapterHeader_searchMarginStart"
-            android:paddingTop="@dimen/itemMainAdapterHeader_searchPaddingTopBottom"
-            android:paddingStart="@dimen/itemMainAdapterHeader_searchPaddingStartEnd"
-            android:paddingEnd="@dimen/itemMainAdapterHeader_searchPaddingStartEnd"
-            android:paddingBottom="@dimen/itemMainAdapterHeader_searchPaddingTopBottom"
+            android:layout_marginStart="@dimen/itemHomeAdapterHeader_searchMarginStart"
+            android:paddingTop="@dimen/itemHomeAdapterHeader_searchPaddingTopBottom"
+            android:paddingStart="@dimen/itemHomeAdapterHeader_searchPaddingStartEnd"
+            android:paddingEnd="@dimen/itemHomeAdapterHeader_searchPaddingStartEnd"
+            android:paddingBottom="@dimen/itemHomeAdapterHeader_searchPaddingTopBottom"
             android:background="@drawable/shape_round"
+            android:text="@{header.hint}"
             android:textColor="@color/fontMain"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageView"

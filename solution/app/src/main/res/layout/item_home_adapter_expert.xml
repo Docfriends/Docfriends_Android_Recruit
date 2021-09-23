@@ -3,63 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="200dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvContainer"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/itemMainAdapterExpert_padding"
-        android:background="?attr/selectableItemBackground">
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/appCompatImageView"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            app:cornerSize="@dimen/itemMainAdapterExpert_imgCornerSize"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/ic_baseline_person_24" />
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/itemMainAdapterExpert_nameMarginTop"
-            android:gravity="center"
-            android:textColor="@color/fontMain"
-            android:textSize="@dimen/itemMainAdapterExpert_nameTextSize"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appCompatImageView"
-            tools:text="김닥톡(의사)" />
-
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/itemMainAdapterExpert_tagMarginTop"
-            android:singleLine="true"
-            android:ellipsize="end"
-            android:gravity="center"
-            android:textColor="@color/fontSub"
-            android:textSize="@dimen/itemMainAdapterExpert_tagTextSize"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView5"
-            tools:text="#성형외과" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/itemMainAdapterExpert_companyMarginTop"
-            android:gravity="center"
-            android:textColor="@color/fontSub"
-            android:textSize="@dimen/itemMainAdapterExpert_companyTextSize"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView6"
-            tools:text="닥프렌즈 병원" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_home_expertadapter"/>
 
 </layout>

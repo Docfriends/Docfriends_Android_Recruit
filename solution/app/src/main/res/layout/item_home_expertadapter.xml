@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.smparkworld.docfriends.model.HomeItem"/>
+        <import type="kotlin.Unit"/>
+        <variable
+            name="expert"
+            type="com.smparkworld.docfriends.model.Expert" />
+        <variable
+            name="onClick"
+            type="kotlin.jvm.functions.Function1&lt;HomeItem, Unit>"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/itemHomeExpertAdapter_width"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/itemHomeExpertAdapter_padding"
+        android:background="?attr/selectableItemBackground"
+        android:onClick="@{() -> onClick.invoke((HomeItem)expert)}">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/appCompatImageView"
+            android:layout_width="@dimen/itemHomeExpertAdapter_imgSize"
+            android:layout_height="@dimen/itemHomeExpertAdapter_imgSize"
+            app:loadImg="@{expert.imgUrl}"
+            app:cornerSize="@dimen/itemHomeExpertAdapter_imgCornerSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_baseline_person_24" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/itemHomeExpertAdapter_nameMarginTop"
+            android:gravity="center"
+            android:text="@{expert.name + `(` + expert.type + `)`}"
+            android:textColor="@color/fontMain"
+            android:textSize="@dimen/itemHomeExpertAdapter_nameTextSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatImageView"
+            tools:text="김닥톡(의사)" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/itemHomeExpertAdapter_tagMarginTop"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:text="@{expert.getTagsAsString()}"
+            android:textColor="@color/fontSub"
+            android:textSize="@dimen/itemHomeExpertAdapter_tagTextSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            tools:text="#성형외과 #피부과" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/itemHomeExpertAdapter_companyMarginTop"
+            android:gravity="center"
+            android:text="@{expert.company}"
+            android:textColor="@color/fontSub"
+            android:textSize="@dimen/itemHomeExpertAdapter_companyTextSize"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView6"
+            tools:text="닥프렌즈 병원" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
