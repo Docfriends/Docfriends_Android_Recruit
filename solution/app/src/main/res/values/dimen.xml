@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- General -->
+    <dimen name="shapeRound_corners">999dp</dimen>
+
+    <!-- Main Activity -->
+    <dimen name="activityMain_toolbarTitleTextSize">20dp</dimen>
+
+    <!-- Home Fragment -->
+    <dimen name="fragmentHome_floatingBtnMargin">16dp</dimen>
+
+    <!-- Item Main Adapter Header -->
+    <dimen name="itemMainAdapterHeader_padding">13dp</dimen>
+    <dimen name="itemMainAdapterHeader_searchMarginStart">7dp</dimen>
+    <dimen name="itemMainAdapterHeader_searchPaddingTopBottom">8dp</dimen>
+    <dimen name="itemMainAdapterHeader_searchPaddingStartEnd">15dp</dimen>
+
+    <!-- Item Main Adapter Consult -->
+    <dimen name="itemMainAdapterConsult_padding">13dp</dimen>
+    <dimen name="itemMainAdapterConsult_titleTextSize">16dp</dimen>
+    <dimen name="itemMainAdapterConsult_tagMarginTop">5dp</dimen>
+    <dimen name="itemMainAdapterConsult_tagTextSize">10dp</dimen>
+    <dimen name="itemMainAdapterConsult_contentMarginTop">10dp</dimen>
+    <dimen name="itemMainAdapterConsult_contentTextSize">13dp</dimen>
+    <dimen name="itemMainAdapterConsult_answerTextSize">11dp</dimen>
+    <dimen name="itemMainAdapterConsult_answerMarginTop">7dp</dimen>
+    <dimen name="itemMainAdapterConsult_regDateMarginTop">7dp</dimen>
+
+    <!-- Item Main Adapter Expert -->
+    <dimen name="itemMainAdapterExpert_padding">5dp</dimen>
+    <dimen name="itemMainAdapterExpert_imgCornerSize">7dp</dimen>
+    <dimen name="itemMainAdapterExpert_nameMarginTop">5dp</dimen>
+    <dimen name="itemMainAdapterExpert_nameTextSize">15dp</dimen>
+    <dimen name="itemMainAdapterExpert_tagMarginTop">8dp</dimen>
+    <dimen name="itemMainAdapterExpert_tagTextSize">12dp</dimen>
+    <dimen name="itemMainAdapterExpert_companyMarginTop">6dp</dimen>
+    <dimen name="itemMainAdapterExpert_companyTextSize">12dp</dimen>
+
+    <!-- Item Main Adapter Company -->
+    <dimen name="itemMainAdapterCompany_paddingTopBottom">5dp</dimen>
+    <dimen name="itemMainAdapterCompany_nameMarginTop">5dp</dimen>
+    <dimen name="itemMainAdapterCompany_nameTextSize">16dp</dimen>
+    <dimen name="itemMainAdapterCompany_addressMarginTop">8dp</dimen>
+    <dimen name="itemMainAdapterCompany_addressTextSize">13dp</dimen>
+
+    <!-- Item Main Adapter Separator -->
+    <dimen name="itemMainAdapterSeparator_dividerSize">5dp</dimen>
+</resources>

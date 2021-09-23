@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/itemMainAdapterConsult_padding">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text=""
+            android:textColor="@color/fontMain"
+            android:textSize="@dimen/itemMainAdapterConsult_titleTextSize"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="한약 먹으면 확실히 체중조절이 가능할까요? (대구 달서구 30대초반)"/>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/itemMainAdapterConsult_tagMarginTop"
+            android:text=""
+            android:textColor="@color/fontSub"
+            android:textSize="@dimen/itemMainAdapterConsult_tagTextSize"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            tools:text="#서울재활요양병원 #재활요양병원 #낙상사고재활 #교통사고재활" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/itemMainAdapterConsult_contentMarginTop"
+            android:text=""
+            android:textColor="@color/fontSub"
+            android:textSize="@dimen/itemMainAdapterConsult_contentTextSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            tools:text="안녕하세요\n재활요양병원에서 낙상사고 재활은 어떤 과정으로\n이루어지는지 궁금하여 질문 드렸습니다. ..." />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/itemMainAdapterConsult_answerMarginTop"
+            android:textSize="@dimen/itemMainAdapterConsult_answerTextSize"
+            android:textColor="@color/brand"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3"
+            tools:text="답변 3"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/itemMainAdapterConsult_regDateMarginTop"
+            android:textColor="@color/fontSub"
+            android:textSize="@dimen/itemMainAdapterConsult_answerTextSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3"
+            tools:text="2021.05.28" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

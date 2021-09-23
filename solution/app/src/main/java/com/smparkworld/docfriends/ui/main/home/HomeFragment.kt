@@ -3,6 +3,7 @@ package com.smparkworld.docfriends.ui.main.home
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -28,7 +29,14 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ) = FragmentMainHomeBinding.inflate(inflater, container, false).apply {
-
+        lifecycleOwner = viewLifecycleOwner
+        onClickMenu = ::onClickMenu
     }.root
+
+    private fun onClickMenu(view: View) {
+        when (view.id) {
+
+        }
+    }
 
 }
