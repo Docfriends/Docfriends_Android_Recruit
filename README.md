@@ -7,13 +7,15 @@
 - Paging3 라이브러리를 사용한 Pagination 처리
 - CoodinatorLayout을 통한 Scroll Animation
 - Drak Theme 구현
+- Loading 상태 표시
+- 네트워크 장애 시 안내 문구 출력
 
 ## 2. 미리보기
 - 홈 화면  
-  <img src="https://user-images.githubusercontent.com/47319426/134712735-fd23e1ed-5e61-41ac-93d3-e7fd33658873.jpg" width="300">
-  
+  <img src="https://user-images.githubusercontent.com/47319426/134714892-f6f114c0-5767-4e27-961f-dbc8c4f32575.jpg" width="300">
+
 - 아래로 스크롤된 홈 화면  
-  <img src="https://user-images.githubusercontent.com/47319426/134713227-02e1cd41-215b-46af-a2b5-9ae42b55049b.jpg" width="300">
+  <img src="https://user-images.githubusercontent.com/47319426/134714907-254d9f3c-432b-4232-8b4e-019ef9d7f5bd.jpg" width="300">
 
 - Dark Theme 적용된 홈 화면  
   <img src="https://user-images.githubusercontent.com/47319426/134713392-9d600237-5382-41f0-bdd9-6798e4221482.jpg" width="300">
