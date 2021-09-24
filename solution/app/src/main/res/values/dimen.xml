@@ -30,6 +30,11 @@
     <!-- Item Main Adapter Separator -->
     <dimen name="itemHomeAdapterSeparator_dividerSize">5dp</dimen>
 
+    <!-- Item Main Adapter LoadState -->
+    <dimen name="itemHomeAdapterLoadState_padding">10dp</dimen>
+    <dimen name="itemHomeAdapterLoadState_msgTextSize">15dp</dimen>
+    <dimen name="itemHomeAdapterLoadState_retryMarginStart">10dp</dimen>
+
     <!-- Item Home ExpertAdapter -->
     <dimen name="itemHomeExpertAdapter_width">200dp</dimen>
     <dimen name="itemHomeExpertAdapter_padding">5dp</dimen>

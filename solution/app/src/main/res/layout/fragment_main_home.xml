@@ -7,6 +7,9 @@
         <import type="android.view.View"/>
         <import type="kotlin.Unit"/>
         <variable
+            name="vm"
+            type="com.smparkworld.docfriends.ui.main.home.HomeViewModel" />
+        <variable
             name="onClickMenu"
             type="kotlin.jvm.functions.Function1&lt;View, Unit>" />
     </data>
@@ -64,6 +67,8 @@
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:layout_width="0dp"
             android:layout_height="0dp"
+            app:OnRefreshListener="@{vm::loadHome}"
+            app:refreshing="@{vm.loading}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

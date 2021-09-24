@@ -9,11 +9,15 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
+import androidx.paging.PagingData
 import androidx.recyclerview.widget.RecyclerView
 import com.smparkworld.docfriends.R
 import com.smparkworld.docfriends.databinding.FragmentMainHomeBinding
 import com.smparkworld.docfriends.model.*
 import com.smparkworld.docfriends.ui.main.MainActivity
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class HomeFragment : Fragment() {
@@ -30,18 +34,30 @@ class HomeFragment : Fragment() {
         (requireActivity() as MainActivity).mainComponent.inject(this)
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ) : View {
-        binding = FragmentMainHomeBinding.inflate(inflater, container, false)
-        binding.lifecycleOwner = viewLifecycleOwner
-        return binding.root
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel.loadHome()
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) = with(binding) {
+    override fun onCreateView(
+            inflater: LayoutInflater,
+            container: ViewGroup?,
+            savedInstanceState: Bundle?
+    ) = FragmentMainHomeBinding.inflate(inflater, container, false).apply {
+        lifecycleOwner = viewLifecycleOwner
         onClickMenu = ::onClickMenu
+        vm = viewModel
+
+        binding = this
+    }.root
+
+
+    override fun onViewCreated(
+            view: View,
+            savedInstanceState: Bundle?
+    ) = with(binding) {
+
+        initContainer(rvContainer)
     }
 
     private fun onClickMenu(view: View) {
@@ -74,5 +90,15 @@ class HomeFragment : Fragment() {
 
     private fun initContainer(container: RecyclerView) {
 
+        viewModel.flow.observe(viewLifecycleOwner) {
+            val adapter = HomeAdapter(::onClickItem).apply {
+                addLoadStateListener { viewModel.setUsersLoadState(it) }
+                withLoadStateFooter(PagingLoadStateAdapter(this::retry))
+                container.adapter = this
+            }
+            lifecycleScope.launch {
+                it.collectLatest { adapter.submitData(it) }
+            }
+        }
     }
 }
