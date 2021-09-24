@@ -8,9 +8,9 @@ import androidx.paging.LoadStateAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.smparkworld.docfriends.databinding.ItemHomeAdapterLoadstateBinding
 
-class PagingLoadStateAdapter(
+class HomeLoadStateAdapter(
         private val retry: () -> Unit
-) : LoadStateAdapter<PagingLoadStateAdapter.StateViewHolder>() {
+) : LoadStateAdapter<HomeLoadStateAdapter.StateViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, loadState: LoadState) = StateViewHolder(
             ItemHomeAdapterLoadstateBinding.inflate(

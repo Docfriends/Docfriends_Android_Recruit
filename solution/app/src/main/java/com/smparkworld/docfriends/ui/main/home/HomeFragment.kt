@@ -97,13 +97,13 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun initContainer(container: RecyclerView) {
+    private fun initContainer(list: RecyclerView) {
 
         viewModel.flow.observe(viewLifecycleOwner) {
             val adapter = HomeAdapter(::onClickItem, ::onClickMenu).apply {
-                addLoadStateListener { viewModel.setUsersLoadState(it) }
-                withLoadStateFooter(PagingLoadStateAdapter(this::retry))
-                container.adapter = this
+                addLoadStateListener(viewModel::setUsersLoadState)
+
+                list.adapter = withLoadStateFooter(HomeLoadStateAdapter(::retry))
             }
             lifecycleScope.launch {
                 it.collectLatest { adapter.submitData(it) }
