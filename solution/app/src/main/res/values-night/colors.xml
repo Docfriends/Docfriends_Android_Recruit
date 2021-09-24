@@ -7,14 +7,14 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="brand">#13BB00</color>
+    <color name="brand">#AAAAAA</color>
 
-    <color name="fontMain">#000000</color>
-    <color name="fontSub">#585F6D</color>
-    <color name="toolbarTitle">#FFFFFF</color>
+    <color name="fontMain">#FFFFFF</color>
+    <color name="fontSub">#CBCDCC</color>
+    <color name="toolbarTitle">@color/fontMain</color>
 
-    <color name="background">#FFFFFF</color>
-    <color name="divider">#EDEDED</color>
+    <color name="background">#35363A</color>
+    <color name="divider">#2C2C2C</color>
     <color name="imgPlaceholder">@color/divider</color>
     <color name="shapeRoundStroke">#BCBCBC</color>
 </resources>
