@@ -4,9 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <import type="android.view.View"/>
+        <import type="kotlin.Unit"/>
         <variable
-            name="item"
-            type="com.smparkworld.docfriends.model.HomeUiModel.ItemCompanies" />
+            name="onClick"
+            type="kotlin.jvm.functions.Function1&lt;View, Unit>" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -23,16 +25,17 @@
             android:textSize="@dimen/itemHomeAdapterCompany_titleTextSize"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/rvContainer"
-            app:layout_constraintEnd_toStartOf="@+id/imageButton"
+            app:layout_constraintEnd_toStartOf="@+id/btnMoreCompany"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/btnMoreCompany"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:background="?attr/selectableItemBackground"
             android:src="@drawable/ic_viewlist"
+            android:onClick="@{(v) -> onClick.invoke(v)}"
             app:layout_constraintBottom_toBottomOf="@+id/textView7"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

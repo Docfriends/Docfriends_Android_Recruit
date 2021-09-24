@@ -11,7 +11,8 @@ import com.smparkworld.docfriends.model.HomeItem
 import com.smparkworld.docfriends.model.HomeUiModel
 
 class HomeAdapter(
-        private val onClickItem: (HomeItem) -> Unit
+        private val onClickItem: (HomeItem) -> Unit,
+        private val onClickMenu: (View) -> Unit
 ) : PagingDataAdapter<HomeUiModel, RecyclerView.ViewHolder>(HomeUiModel.DIFF_CALLBACK) {
 
     override fun getItemViewType(position: Int): Int {
@@ -44,14 +45,14 @@ class HomeAdapter(
                 ExpertViewHolder(
                     ItemHomeAdapterExpertBinding.inflate(
                         LayoutInflater.from(parent.context), parent, false
-                    ), onClickItem
+                    ), onClickItem, onClickMenu
                 )
             }
             R.layout.item_home_adapter_company -> {
                 CompanyViewHolder(
                     ItemHomeAdapterCompanyBinding.inflate(
                         LayoutInflater.from(parent.context), parent, false
-                    ), onClickItem
+                    ), onClickItem, onClickMenu
                 )
             }
             else -> {
@@ -101,22 +102,26 @@ class HomeAdapter(
 
     class ExpertViewHolder(
         private val binding: ItemHomeAdapterExpertBinding,
-        private val onClickItem: (HomeItem) -> Unit
+        private val onClickItem: (HomeItem) -> Unit,
+        private val onClickMenu: (View) -> Unit
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: HomeUiModel.ItemExperts) {
             binding.rvContainer.adapter = ExpertAdapter(item.experts, onClickItem)
+            binding.onClick = onClickMenu
             binding.executePendingBindings()
         }
     }
 
     class CompanyViewHolder(
         private val binding: ItemHomeAdapterCompanyBinding,
-        private val onClickItem: (HomeItem) -> Unit
+        private val onClickItem: (HomeItem) -> Unit,
+        private val onClickMenu: (View) -> Unit
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: HomeUiModel.ItemCompanies) {
             binding.rvContainer.adapter = CompanyAdapter(item.companies, onClickItem)
+            binding.onClick = onClickMenu
             binding.executePendingBindings()
         }
     }
