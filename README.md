@@ -1,5 +1,33 @@
 # Docfriends_Android_Recruit
 
+닥프렌즈 Android 개발 채용 과제 결과물입니다.
+
+## 1. 구현기능
+- 홈 화면
+- Paging3 라이브러리를 사용한 Pagination 처리
+- CoodinatorLayout을 통한 Scroll Animation
+- Drak Theme 구현
+- Loading 상태 표시
+- 네트워크 장애 시 안내 문구 출력
+
+## 2. 미리보기
+- 홈 화면  
+  <img src="https://user-images.githubusercontent.com/47319426/134714892-f6f114c0-5767-4e27-961f-dbc8c4f32575.jpg" width="300">
+
+- 아래로 스크롤된 홈 화면  
+  <img src="https://user-images.githubusercontent.com/47319426/134714907-254d9f3c-432b-4232-8b4e-019ef9d7f5bd.jpg" width="300">
+
+- Dark Theme 적용된 홈 화면  
+  <img src="https://user-images.githubusercontent.com/47319426/134713392-9d600237-5382-41f0-bdd9-6798e4221482.jpg" width="300">
+
+## 3. 적용기술
+`Kotlin` `MVVM` `ViewModel` `LiveData` `Coroutine` `DataBinding` `Dagger2` `Retrofit2` `OkHttpClient` `Android-KTX` `Paging3` `Glide` `SwiperRefreshLayout` `BottomNavigationView`
+<br><br><br>
+***
+***
+
+# Docfriends_Android_Recruit
+
 안녕하세요
 
 닥프렌즈 Android 개발자 채용에 지원해주셔서 감사합니다.

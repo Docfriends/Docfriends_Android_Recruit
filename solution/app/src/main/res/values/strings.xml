@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">닥톡</string>
+
+    <!-- General -->
+    <string name="error_failedToConnectNetwork">닥톡 서비스에 연결할 수 없습니다. 네트워크 상태를 확인해주세요 : (</string>
+
+    <!-- Main Activity -->
+    <string name="activityMain_bottomNaviItemHome">홈</string>
+    <string name="activityMain_bottomNaviItemCare">전문가</string>
+    <string name="activityMain_bottomNaviItemChat">상담방</string>
+    <string name="activityMain_bottomNaviItemVideo">비대면진료</string>
+    <string name="activityMain_bottomNaviItemMe">프로필</string>
+
+    <!-- Item Main Adapter Header -->
+    <string name="itemMainAdapterHeader_hint">%s님이 궁금한 증상을 알려주세요.</string>
+
+    <!-- Item Main Adapter Consult -->
+    <string name="itemMainAdapterConsult_answerForm">답변 %d</string>
+
+    <!-- Item Main Adapter Expert -->
+    <string name="itemMainAdapterExpert_title">활동이 많은 전문가</string>
+
+    <!-- Item Main Adapter Company -->
+    <string name="itemMainAdapterCompany_title">근처 의료기관</string>
+
+    <!-- Item Main Adapter LoadState -->
+    <string name="itemMainAdapterLoadState_retry">재시도</string>
+</resources>

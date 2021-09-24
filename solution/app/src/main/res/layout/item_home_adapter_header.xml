@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.smparkworld.docfriends.model.HomeItem"/>
+        <import type="kotlin.Unit"/>
+        <variable
+            name="user"
+            type="com.smparkworld.docfriends.model.User" />
+        <variable
+            name="onClick"
+            type="kotlin.jvm.functions.Function1&lt;HomeItem, Unit>"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/itemHomeAdapterHeader_padding"
+        android:background="?attr/selectableItemBackground"
+        android:onClick="@{() -> onClick.invoke((HomeItem)user)}">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/shape_round"
+            app:loadImg="@{user.imgUrl}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            tools:src="@drawable/ic_baseline_person_24" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/itemHomeAdapterHeader_searchMarginStart"
+            android:paddingTop="@dimen/itemHomeAdapterHeader_searchPaddingTopBottom"
+            android:paddingStart="@dimen/itemHomeAdapterHeader_searchPaddingStartEnd"
+            android:paddingEnd="@dimen/itemHomeAdapterHeader_searchPaddingStartEnd"
+            android:paddingBottom="@dimen/itemHomeAdapterHeader_searchPaddingTopBottom"
+            android:background="@drawable/shape_round"
+            android:text="@{@string/itemMainAdapterHeader_hint(user.name)}"
+            android:textColor="@color/fontMain"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="000님이 궁금한 증상을 알려주세요"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
