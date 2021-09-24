@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <import type="kotlin.Unit"/>
+        <variable
+            name="onClick"
+            type="kotlin.jvm.functions.Function1&lt;View, Unit>" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/itemHomeAdapterCompany_titlePadding"
+            android:text="@string/itemMainAdapterCompany_title"
+            android:textColor="@color/fontSub"
+            android:textSize="@dimen/itemHomeAdapterCompany_titleTextSize"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/rvContainer"
+            app:layout_constraintEnd_toStartOf="@+id/btnMoreCompany"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btnMoreCompany"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:background="?attr/selectableItemBackground"
+            android:src="@drawable/ic_viewlist"
+            android:onClick="@{(v) -> onClick.invoke(v)}"
+            app:layout_constraintBottom_toBottomOf="@+id/textView7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/itemHomeAdapterCompany_listMarginBottom"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:listitem="@layout/item_home_companyadapter"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

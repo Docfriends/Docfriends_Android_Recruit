@@ -8,4 +8,12 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="brand">#13BB00</color>
+
+    <color name="fontMain">#000000</color>
+    <color name="fontSub">#585F6D</color>
+    <color name="toolbarTitle">#FFFFFF</color>
+
+    <color name="divider">#EDEDED</color>
+    <color name="imgPlaceholder">@color/divider</color>
+    <color name="shapeRoundStroke">#BCBCBC</color>
 </resources>
