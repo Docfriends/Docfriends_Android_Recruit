@@ -7,6 +7,9 @@ import com.smparkworld.docfriends.model.Expert
 
 data class HomeResponse (
 
+    @SerializedName("pageMap")
+    val pageMap: PageMap,
+
     @SerializedName("expertListPosition")
     val expertsPosition: Int,
 
@@ -21,4 +24,19 @@ data class HomeResponse (
 
     @SerializedName("companyList")
     val companies: List<Company>
+)
+
+data class PageMap (
+
+    @SerializedName("pageNumber")
+    val pageNum: Int,
+
+    @SerializedName("rowPerPage")
+    val rowPerPage: Int,
+
+    @SerializedName("pageCount")
+    val pageCnt: Int,
+
+    @SerializedName("totalCount")
+    val totalCnt: Int
 )

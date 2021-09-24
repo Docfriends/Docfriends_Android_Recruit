@@ -5,6 +5,6 @@ import retrofit2.http.GET
 
 interface DocfriendsAPI {
 
-    @GET("/home.json")
+    @GET("home.json")
     suspend fun getHome(): Response<HomeResponse>
 }

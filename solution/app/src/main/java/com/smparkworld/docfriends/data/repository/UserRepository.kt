@@ -6,5 +6,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface UserRepository {
 
-    fun getHome(): Flow<PagingData<HomeUiModel>>
+    fun getHome(search: String?): Flow<PagingData<HomeUiModel>>
 }

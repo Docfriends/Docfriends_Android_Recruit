@@ -23,16 +23,27 @@ class HomeViewModel @Inject constructor(
     private val _flow = MutableLiveData<Flow<PagingData<HomeUiModel>>>()
     val flow: LiveData<Flow<PagingData<HomeUiModel>>> = _flow
 
-    fun loadHome() {
+    private var _search: String? = null
+
+    fun loadHome(search: String? = null) {
+        _search = search
 
         viewModelScope.launch {
 
-            _flow.value = userRepository.getHome()
+            _flow.value = userRepository.getHome(_search)
         }
     }
 
     fun setUsersLoadState(loadState: CombinedLoadStates?) {
         val state = loadState?.refresh
         _loading.value = state is LoadState.Loading
+
+        if (state is LoadState.Error) {
+            state.error.printStackTrace()
+        }
+    }
+
+    fun refresh() {
+        loadHome(_search)
     }
 }
