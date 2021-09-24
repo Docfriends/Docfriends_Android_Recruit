@@ -81,7 +81,7 @@ class HomeAdapter(
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(header: HomeUiModel.Header) {
-            binding.header = header
+            binding.user = header.user
             binding.onClick = onClickItem
             binding.executePendingBindings()
         }

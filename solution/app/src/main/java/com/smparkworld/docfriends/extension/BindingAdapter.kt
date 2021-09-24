@@ -5,6 +5,7 @@ import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.smparkworld.docfriends.R
 
 @BindingAdapter("hiddenBy")
 fun hiddenBy(fab: FloatingActionButton, recyclerView: RecyclerView) {
@@ -17,5 +18,5 @@ fun hiddenBy(fab: FloatingActionButton, recyclerView: RecyclerView) {
 
 @BindingAdapter("loadImg")
 fun loadImg(view: ImageView, url: String) {
-    Glide.with(view).load(url).into(view)
+    Glide.with(view).load(url).placeholder(R.drawable.ic_baseline_person_24).override(512).into(view)
 }

@@ -72,7 +72,7 @@ class HomeFragment : Fragment() {
 
     private fun onClickItem(item: HomeItem) {
         when (item) {
-            is HomeUiModel.Header -> {
+            is User -> {
                 Toast.makeText(requireContext(), "증상 질문 클릭", Toast.LENGTH_SHORT).show()
             }
             is Consult -> {

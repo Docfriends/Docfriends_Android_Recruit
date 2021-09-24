@@ -4,7 +4,7 @@ import androidx.recyclerview.widget.DiffUtil
 
 sealed class HomeUiModel {
 
-    data class Header(val hint: String) : HomeUiModel(), HomeItem
+    data class Header(val user: User) : HomeUiModel(), HomeItem
     data class ItemConsult(val consult: Consult) : HomeUiModel()
     data class ItemExperts(val experts: List<Expert>): HomeUiModel()
     data class ItemCompanies(val companies: List<Company>) : HomeUiModel()
@@ -15,7 +15,7 @@ sealed class HomeUiModel {
 
             override fun areItemsTheSame(oldItem: HomeUiModel, newItem: HomeUiModel): Boolean {
                 return if (oldItem is Header && newItem is Header) {
-                    oldItem == newItem
+                    oldItem.user.imgUrl == newItem.user.imgUrl
                 } else if (oldItem is ItemConsult && newItem is ItemConsult) {
                     oldItem.consult.seq == newItem.consult.seq
                 } else if (oldItem is ItemExperts  && newItem is ItemExperts) {
@@ -29,7 +29,7 @@ sealed class HomeUiModel {
 
             override fun areContentsTheSame(oldItem: HomeUiModel, newItem: HomeUiModel): Boolean {
                 return if (oldItem is Header && newItem is Header) {
-                    oldItem.hint == newItem.hint
+                    oldItem.user == newItem.user
                 } else if (oldItem is ItemConsult && newItem is ItemConsult) {
                     oldItem.consult == newItem.consult
                 } else if (oldItem is ItemExperts  && newItem is ItemExperts) {

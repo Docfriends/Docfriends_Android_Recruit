@@ -14,5 +14,6 @@
     <color name="toolbarTitle">#FFFFFF</color>
 
     <color name="divider">#EDEDED</color>
-    <color name="shapeRoundStroke">@color/fontSub</color>
+    <color name="imgPlaceholder">@color/divider</color>
+    <color name="shapeRoundStroke">#BCBCBC</color>
 </resources>
