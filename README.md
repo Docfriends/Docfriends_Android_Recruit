@@ -6,7 +6,7 @@
 - 홈 화면
 - Paging3 라이브러리를 사용한 Pagination 처리
 - CoodinatorLayout을 통한 Scroll Animation
-- Drak Theme 구현
+- Dark Theme 구현
 - Loading 상태 표시
 - 네트워크 장애 시 안내 문구 출력
 
