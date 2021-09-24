@@ -21,12 +21,12 @@
         android:background="?attr/selectableItemBackground"
         android:onClick="@{() -> onClick.invoke((HomeItem)expert)}">
 
-        <androidx.appcompat.widget.AppCompatImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/appCompatImageView"
             android:layout_width="@dimen/itemHomeExpertAdapter_imgSize"
             android:layout_height="@dimen/itemHomeExpertAdapter_imgSize"
+            android:scaleType="centerCrop"
             app:loadImg="@{expert.imgUrl}"
-            app:cornerSize="@dimen/itemHomeExpertAdapter_imgCornerSize"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -39,8 +39,9 @@
             android:layout_marginTop="@dimen/itemHomeExpertAdapter_nameMarginTop"
             android:gravity="center"
             android:text="@{expert.name + `(` + expert.type + `)`}"
-            android:textColor="@color/fontMain"
             android:textSize="@dimen/itemHomeExpertAdapter_nameTextSize"
+            android:textColor="@color/fontMain"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/appCompatImageView"

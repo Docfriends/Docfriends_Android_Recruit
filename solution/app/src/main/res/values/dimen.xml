@@ -18,17 +18,27 @@
 
     <!-- Item Main Adapter Consult -->
     <dimen name="itemHomeAdapterConsult_padding">13dp</dimen>
-    <dimen name="itemHomeAdapterConsult_titleTextSize">16dp</dimen>
+    <dimen name="itemHomeAdapterConsult_titleTextSize">18dp</dimen>
     <dimen name="itemHomeAdapterConsult_tagMarginTop">5dp</dimen>
-    <dimen name="itemHomeAdapterConsult_tagTextSize">10dp</dimen>
+    <dimen name="itemHomeAdapterConsult_tagTextSize">13dp</dimen>
     <dimen name="itemHomeAdapterConsult_contentMarginTop">10dp</dimen>
-    <dimen name="itemHomeAdapterConsult_contentTextSize">13dp</dimen>
-    <dimen name="itemHomeAdapterConsult_answerTextSize">11dp</dimen>
+    <dimen name="itemHomeAdapterConsult_contentTextSize">15dp</dimen>
+    <dimen name="itemHomeAdapterConsult_answerTextSize">13dp</dimen>
     <dimen name="itemHomeAdapterConsult_answerMarginTop">7dp</dimen>
     <dimen name="itemHomeAdapterConsult_regDateMarginTop">7dp</dimen>
 
+    <!-- Item Main Adapter Expert -->
+    <dimen name="itemHomeAdapterExpert_titlePadding">10dp</dimen>
+    <dimen name="itemHomeAdapterExpert_titleTextSize">16dp</dimen>
+    <dimen name="itemHomeAdapterExpert_listMarginBottom">15dp</dimen>
+
+    <!-- Item Main Adapter Company -->
+    <dimen name="itemHomeAdapterCompany_titlePadding">10dp</dimen>
+    <dimen name="itemHomeAdapterCompany_titleTextSize">16dp</dimen>
+    <dimen name="itemHomeAdapterCompany_listMarginBottom">15dp</dimen>
+
     <!-- Item Main Adapter Separator -->
-    <dimen name="itemHomeAdapterSeparator_dividerSize">5dp</dimen>
+    <dimen name="itemHomeAdapterSeparator_dividerSize">10dp</dimen>
 
     <!-- Item Main Adapter LoadState -->
     <dimen name="itemHomeAdapterLoadState_padding">10dp</dimen>
@@ -37,15 +47,15 @@
 
     <!-- Item Home ExpertAdapter -->
     <dimen name="itemHomeExpertAdapter_width">200dp</dimen>
-    <dimen name="itemHomeExpertAdapter_padding">5dp</dimen>
+    <dimen name="itemHomeExpertAdapter_padding">10dp</dimen>
     <dimen name="itemHomeExpertAdapter_imgCornerSize">7dp</dimen>
     <dimen name="itemHomeExpertAdapter_imgSize">100dp</dimen>
-    <dimen name="itemHomeExpertAdapter_nameMarginTop">5dp</dimen>
-    <dimen name="itemHomeExpertAdapter_nameTextSize">15dp</dimen>
+    <dimen name="itemHomeExpertAdapter_nameMarginTop">3dp</dimen>
+    <dimen name="itemHomeExpertAdapter_nameTextSize">16dp</dimen>
     <dimen name="itemHomeExpertAdapter_tagMarginTop">8dp</dimen>
     <dimen name="itemHomeExpertAdapter_tagTextSize">12dp</dimen>
     <dimen name="itemHomeExpertAdapter_companyMarginTop">6dp</dimen>
-    <dimen name="itemHomeExpertAdapter_companyTextSize">12dp</dimen>
+    <dimen name="itemHomeExpertAdapter_companyTextSize">13dp</dimen>
 
     <!-- Item Home CompanyAdapter -->
     <dimen name="itemHomeCompanyAdapter_width">300dp</dimen>

@@ -14,6 +14,12 @@
     <!-- Item Main Adapter Consult -->
     <string name="itemMainAdapterConsult_answerForm">답변 %d</string>
 
+    <!-- Item Main Adapter Expert -->
+    <string name="itemMainAdapterExpert_title">활동이 많은 전문가</string>
+
+    <!-- Item Main Adapter Company -->
+    <string name="itemMainAdapterCompany_title">근처 의료기관</string>
+
     <!-- Item Main Adapter LoadState -->
     <string name="itemMainAdapterLoadState_retry">재시도</string>
 </resources>

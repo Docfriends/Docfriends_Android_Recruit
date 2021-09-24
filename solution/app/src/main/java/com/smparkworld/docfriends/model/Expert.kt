@@ -21,7 +21,7 @@ data class Expert (
 ) : HomeItem {
 
     fun getTagsAsString() = with(StringBuilder()) {
-        tags.forEach { append("$it ") }
+        tags.forEach { append("#${it.name} ") }
         return@with toString().trim()
     }
 }

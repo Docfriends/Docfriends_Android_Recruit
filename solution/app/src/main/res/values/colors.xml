@@ -10,9 +10,9 @@
     <color name="brand">#13BB00</color>
 
     <color name="fontMain">#000000</color>
-    <color name="fontSub">#AAAAAA</color>
+    <color name="fontSub">#585F6D</color>
     <color name="toolbarTitle">#FFFFFF</color>
 
-    <color name="divider">@color/fontSub</color>
+    <color name="divider">#EDEDED</color>
     <color name="shapeRoundStroke">@color/fontSub</color>
 </resources>

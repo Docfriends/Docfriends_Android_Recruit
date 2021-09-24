@@ -12,8 +12,8 @@ data class Consult (
     @SerializedName("title")
     val title: String,
 
-    @SerializedName("content")
-    val content: String,
+    @SerializedName("context")
+    val context: String,
 
     @SerializedName("regDate")
     val regDate: Long,
@@ -26,7 +26,7 @@ data class Consult (
 ) : HomeItem {
 
     fun getTagsAsString() = with(StringBuilder()) {
-        tags.forEach { append("$it ") }
+        tags.forEach { append("#${it.name} ") }
         return@with toString().trim()
     }
 

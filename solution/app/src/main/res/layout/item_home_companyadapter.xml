@@ -19,6 +19,7 @@
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/itemHomeCompanyAdapter_paddingTopBottom"
         android:paddingBottom="@dimen/itemHomeCompanyAdapter_paddingTopBottom"
+        android:background="?attr/selectableItemBackground"
         android:onClick="@{() -> onClick.invoke((HomeItem)company)}">
 
         <ImageView

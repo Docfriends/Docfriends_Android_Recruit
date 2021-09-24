@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+        <import type="android.view.View"/>
         <import type="com.smparkworld.docfriends.model.HomeItem"/>
         <import type="kotlin.Unit"/>
         <variable
@@ -18,6 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/itemHomeAdapterConsult_padding"
+        android:background="?attr/selectableItemBackground"
         android:onClick="@{() -> onClick.invoke((HomeItem)consult)}">
 
         <TextView
@@ -44,6 +46,7 @@
             android:textColor="@color/fontSub"
             android:textSize="@dimen/itemHomeAdapterConsult_tagTextSize"
             android:textStyle="bold"
+            android:visibility="@{consult.tags.size() == 0 ? View.GONE : View.VISIBLE}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"
@@ -54,9 +57,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/itemHomeAdapterConsult_contentMarginTop"
-            android:text="@{consult.content}"
+            android:text="@{consult.context}"
             android:textColor="@color/fontSub"
             android:textSize="@dimen/itemHomeAdapterConsult_contentTextSize"
+            android:maxLines="3"
+            android:ellipsize="end"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2"

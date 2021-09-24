@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import androidx.paging.PagingData
 import androidx.recyclerview.widget.RecyclerView
 import com.smparkworld.docfriends.R
 import com.smparkworld.docfriends.databinding.FragmentMainHomeBinding
@@ -74,16 +73,16 @@ class HomeFragment : Fragment() {
     private fun onClickItem(item: HomeItem) {
         when (item) {
             is HomeUiModel.Header -> {
-
+                Toast.makeText(requireContext(), "증상 질문 클릭", Toast.LENGTH_SHORT).show()
             }
             is Consult -> {
-
+                Toast.makeText(requireContext(), "상담 아이템 클릭", Toast.LENGTH_SHORT).show()
             }
             is Expert -> {
-
+                Toast.makeText(requireContext(), "전문가 아이템 클릭", Toast.LENGTH_SHORT).show()
             }
             is Company -> {
-
+                Toast.makeText(requireContext(), "회사 아이템 클릭", Toast.LENGTH_SHORT).show()
             }
         }
     }
