@@ -50,7 +50,6 @@ class HomeFragment : Fragment() {
         binding = this
     }.root
 
-
     override fun onViewCreated(
             view: View,
             savedInstanceState: Bundle?
@@ -73,6 +72,9 @@ class HomeFragment : Fragment() {
             }
             R.id.btnMoreCompany -> {
                 Toast.makeText(requireContext(), "회사 더보기 버튼 클릭", Toast.LENGTH_SHORT).show()
+            }
+            R.id.btnAsk -> {
+                Toast.makeText(requireContext(), "질문 추가 버튼 클릭", Toast.LENGTH_SHORT).show()
             }
         }
     }
