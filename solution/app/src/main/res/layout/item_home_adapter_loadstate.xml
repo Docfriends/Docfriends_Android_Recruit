@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:padding="@dimen/itemHomeAdapterLoadState_padding">
+
+        <TextView
+            android:id="@+id/tvErrorMsg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/error_failedToConnectNetwork"
+            android:textColor="@color/black"
+            android:textSize="@dimen/itemHomeAdapterLoadState_msgTextSize"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnRetry"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnRetry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/itemHomeAdapterLoadState_retryMarginStart"
+            android:backgroundTint="@color/black"
+            android:text="@string/itemMainAdapterLoadState_retry"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvErrorMsg"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            style="?android:attr/progressBarStyle"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

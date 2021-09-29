@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.smparkworld.docfriends.model.HomeItem"/>
+        <import type="kotlin.Unit"/>
+        <variable
+            name="company"
+            type="com.smparkworld.docfriends.model.Company" />
+        <variable
+            name="onClick"
+            type="kotlin.jvm.functions.Function1&lt;HomeItem, Unit>"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/itemHomeCompanyAdapter_width"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/itemHomeCompanyAdapter_paddingTopBottom"
+        android:paddingBottom="@dimen/itemHomeCompanyAdapter_paddingTopBottom"
+        android:background="?attr/selectableItemBackground"
+        android:onClick="@{() -> onClick.invoke((HomeItem)company)}">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:loadImg="@{company.imgUrl}"
+            app:layout_constraintDimensionRatio="2:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_baseline_image_24" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/itemHomeCompanyAdapter_nameMarginTop"
+            android:gravity="center"
+            android:text="@{company.name}"
+            android:textColor="@color/fontMain"
+            android:textSize="@dimen/itemHomeCompanyAdapter_nameTextSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2"
+            tools:text="닥프렌즈 병원" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/itemHomeCompanyAdapter_addressMarginTop"
+            android:gravity="center"
+            android:text="@{company.address + ` ` + company.addressEtc}"
+            android:textColor="@color/fontSub"
+            android:textSize="@dimen/itemHomeCompanyAdapter_addressTextSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            tools:text="서울특별시 강남구 논현로 164 (도곡동) 10층" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

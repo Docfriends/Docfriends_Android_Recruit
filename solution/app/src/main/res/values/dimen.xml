@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- General -->
+    <dimen name="shapeRound_corners">999dp</dimen>
+
+    <!-- Main Activity -->
+    <dimen name="activityMain_toolbarTitleTextSize">20dp</dimen>
+
+    <!-- Home Fragment -->
+    <dimen name="fragmentHome_floatingBtnMargin">16dp</dimen>
+
+    <!-- Item Home Adapter Header -->
+    <dimen name="itemHomeAdapterHeader_padding">13dp</dimen>
+    <dimen name="itemHomeAdapterHeader_searchMarginStart">7dp</dimen>
+    <dimen name="itemHomeAdapterHeader_searchPaddingTopBottom">8dp</dimen>
+    <dimen name="itemHomeAdapterHeader_searchPaddingStartEnd">15dp</dimen>
+
+    <!-- Item Main Adapter Consult -->
+    <dimen name="itemHomeAdapterConsult_padding">13dp</dimen>
+    <dimen name="itemHomeAdapterConsult_titleTextSize">18dp</dimen>
+    <dimen name="itemHomeAdapterConsult_tagMarginTop">5dp</dimen>
+    <dimen name="itemHomeAdapterConsult_tagTextSize">13dp</dimen>
+    <dimen name="itemHomeAdapterConsult_contentMarginTop">10dp</dimen>
+    <dimen name="itemHomeAdapterConsult_contentTextSize">15dp</dimen>
+    <dimen name="itemHomeAdapterConsult_answerTextSize">13dp</dimen>
+    <dimen name="itemHomeAdapterConsult_answerMarginTop">7dp</dimen>
+    <dimen name="itemHomeAdapterConsult_regDateMarginTop">7dp</dimen>
+
+    <!-- Item Main Adapter Expert -->
+    <dimen name="itemHomeAdapterExpert_titlePadding">10dp</dimen>
+    <dimen name="itemHomeAdapterExpert_titleTextSize">16dp</dimen>
+    <dimen name="itemHomeAdapterExpert_listMarginBottom">15dp</dimen>
+
+    <!-- Item Main Adapter Company -->
+    <dimen name="itemHomeAdapterCompany_titlePadding">10dp</dimen>
+    <dimen name="itemHomeAdapterCompany_titleTextSize">16dp</dimen>
+    <dimen name="itemHomeAdapterCompany_listMarginBottom">15dp</dimen>
+
+    <!-- Item Main Adapter Separator -->
+    <dimen name="itemHomeAdapterSeparator_dividerSize">10dp</dimen>
+
+    <!-- Item Main Adapter LoadState -->
+    <dimen name="itemHomeAdapterLoadState_padding">10dp</dimen>
+    <dimen name="itemHomeAdapterLoadState_msgTextSize">15dp</dimen>
+    <dimen name="itemHomeAdapterLoadState_retryMarginStart">10dp</dimen>
+
+    <!-- Item Home ExpertAdapter -->
+    <dimen name="itemHomeExpertAdapter_width">200dp</dimen>
+    <dimen name="itemHomeExpertAdapter_padding">10dp</dimen>
+    <dimen name="itemHomeExpertAdapter_imgCornerSize">7dp</dimen>
+    <dimen name="itemHomeExpertAdapter_imgSize">100dp</dimen>
+    <dimen name="itemHomeExpertAdapter_nameMarginTop">3dp</dimen>
+    <dimen name="itemHomeExpertAdapter_nameTextSize">16dp</dimen>
+    <dimen name="itemHomeExpertAdapter_tagMarginTop">8dp</dimen>
+    <dimen name="itemHomeExpertAdapter_tagTextSize">12dp</dimen>
+    <dimen name="itemHomeExpertAdapter_companyMarginTop">6dp</dimen>
+    <dimen name="itemHomeExpertAdapter_companyTextSize">13dp</dimen>
+
+    <!-- Item Home CompanyAdapter -->
+    <dimen name="itemHomeCompanyAdapter_width">300dp</dimen>
+    <dimen name="itemHomeCompanyAdapter_paddingTopBottom">5dp</dimen>
+    <dimen name="itemHomeCompanyAdapter_nameMarginTop">5dp</dimen>
+    <dimen name="itemHomeCompanyAdapter_nameTextSize">16dp</dimen>
+    <dimen name="itemHomeCompanyAdapter_addressMarginTop">8dp</dimen>
+    <dimen name="itemHomeCompanyAdapter_addressTextSize">13dp</dimen>
+</resources>
