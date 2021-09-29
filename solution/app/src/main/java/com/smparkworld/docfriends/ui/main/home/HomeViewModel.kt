@@ -37,9 +37,8 @@ class HomeViewModel @Inject constructor(
                 PagingConfig(pageSize = 10)
             ) {
                 userRepository.getHome(search)
-            }.flow.map {
-                it.map { item -> item }
-                    .insertHeaderItem(item = HomeUiModel.Header(user))
+            }.flow.map { data ->
+                data.insertHeaderItem(item = HomeUiModel.Header(user))
                     .insertSeparators { before, after ->
                         if (before != null && after != null) HomeUiModel.Separator else null
                     }
