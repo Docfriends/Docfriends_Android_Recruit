@@ -10,7 +10,7 @@ import test.map.dak_project.databinding.TaglistItemBinding
 
 
 
-//Consult의 TagList 아답터
+//[Consult의 TagList 아답터]
 class TagListAdapter : RecyclerView.Adapter<TagListAdapter.TagListViewHolder>() {
     lateinit var tagmodel: List<Tag>
 
