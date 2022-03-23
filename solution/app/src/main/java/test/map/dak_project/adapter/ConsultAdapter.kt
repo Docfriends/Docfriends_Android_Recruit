@@ -11,7 +11,7 @@ import test.map.dak_project.dakmodel_Package.DakItem
 import test.map.dak_project.databinding.ConsultlistItemBinding
 
 
-//Consult Adapter
+//[Consult Adapter]
 class ConsultAdapter : RecyclerView.Adapter<ConsultAdapter.ConsultViewHolder>() {
 
 
