@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="tagxitem"
+            type="test.map.dak_project.dakmodel_Package.TagX" />
+    </data>
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       >
+
+
+        <TextView
+            android:id="@+id/tagname"
+            android:text="@{tagxitem.tagxtext.toString()}"
+            tools:text="성형외과"
+            android:textSize="13sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+
+</layout>
