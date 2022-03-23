@@ -15,7 +15,7 @@ import javax.net.ssl.TrustManager
 import javax.net.ssl.X509TrustManager
 
 
-//okhttp 및 retrofit Client 생성
+//[okhttp 및 retrofit Client 생성]
 object Retrofit_Client {
 
     fun getClient(baseUrl:String): Retrofit{
