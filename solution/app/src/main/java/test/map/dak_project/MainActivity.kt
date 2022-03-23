@@ -17,7 +17,7 @@ import test.map.dak_project.retrofit.Retrofit_Manager
 import java.lang.Exception
 import kotlin.coroutines.CoroutineContext
 
-//메인엑티비티 및 리사이클러뷰 셋
+//[메인엑티비티 및 리사이클러뷰 셋]
 class MainActivity : AppCompatActivity(), CoroutineScope {
 
 
