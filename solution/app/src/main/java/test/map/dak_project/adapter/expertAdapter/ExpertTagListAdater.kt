@@ -8,7 +8,7 @@ import test.map.dak_project.dakmodel_Package.TagX
 import test.map.dak_project.databinding.ExpertTaglistItemBinding
 
 
-//[Expert의 태그 리스트 아답터 생성]
+//[Expert의 태그 리스트 아답터 생성 ]
 class ExpertTagListAdater : RecyclerView.Adapter<ExpertTagListAdater.ExpertTagListViewHolder>() {
 
     lateinit var taglist: List<TagX>
