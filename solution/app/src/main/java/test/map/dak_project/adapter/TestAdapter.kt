@@ -17,7 +17,7 @@ import test.map.dak_project.databinding.ExpertmainItemBinding
 import java.lang.IllegalArgumentException
 import kotlin.coroutines.coroutineContext
 
-//multi 아답터 실패
+//[multi 아답터 실패]
 class TestAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     lateinit var entityModel: List<EntityModel>
