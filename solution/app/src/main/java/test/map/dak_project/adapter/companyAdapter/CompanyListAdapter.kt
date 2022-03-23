@@ -8,7 +8,7 @@ import com.bumptech.glide.Glide
 import test.map.dak_project.dakmodel_Package.Company
 import test.map.dak_project.databinding.CompanylistItemBinding
 
-//[CompanyList 아답터 생성]
+//[ CompanyList 아답터 생성 ]
 class CompanyListAdapter : RecyclerView.Adapter<CompanyListAdapter.CompanyListViewHolder>() {
     lateinit var companymodel: List<Company>
 
