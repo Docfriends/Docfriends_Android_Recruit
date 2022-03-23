@@ -10,7 +10,7 @@ import test.map.dak_project.dakmodel_Package.Consult
 import test.map.dak_project.dakmodel_Package.DakItem
 import test.map.dak_project.dakmodel_Package.Item
 
-//코루틴을 활용한 레트로핏 비동기 처리
+//[코루틴을 활용한 레트로핏 비동기 처리]
 class Retrofit_Manager {
 
     companion object {
