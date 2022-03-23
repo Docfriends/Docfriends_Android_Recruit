@@ -12,7 +12,7 @@ import test.map.dak_project.databinding.ExpertmainItemBinding
 
 
 
-//Expert 메인 아답터
+//[Expert 메인 아답터]
 class ExpertTitleAdapter:RecyclerView.Adapter<ExpertTitleAdapter.ExpertTitleViewHolder>() {
 
     lateinit var expertlistAdater: ExpertListAdapter

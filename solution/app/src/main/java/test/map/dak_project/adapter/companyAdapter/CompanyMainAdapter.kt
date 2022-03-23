@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import test.map.dak_project.dakmodel_Package.DakItem
 import test.map.dak_project.databinding.CompanyItemBinding
 
+//[CompanyMain Adapter 생성]
 class CompanyMainAdapter:RecyclerView.Adapter<CompanyMainAdapter.ComapanyMainViewHolder>() {
     lateinit var dakmodel : List<DakItem>
     lateinit var companyListAdapter: CompanyListAdapter
