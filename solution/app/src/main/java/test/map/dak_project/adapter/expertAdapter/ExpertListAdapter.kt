@@ -11,7 +11,7 @@ import test.map.dak_project.databinding.ExpertlistItemBinding
 
 
 
-[ExpertList Adapter 생성]
+[ ExpertList Adapter 생성 ]
 class ExpertListAdapter : RecyclerView.Adapter<ExpertListAdapter.ExpertListViewHolder>() {
 
     lateinit var expertmodel: List<Expert>
